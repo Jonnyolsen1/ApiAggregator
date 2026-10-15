@@ -13,7 +13,7 @@ public class NewsApiProvider(HttpClient http, IOptionsMonitor<ProviderSettings> 
     public async Task<IReadOnlyList<AggregatedItem>> FetchAsync(
         ProviderRequest request, CancellationToken ct)
     {
-        // News API wants the key in a header, so build the request message yourself
+        // News API wants the key in a header
         var apiKey = settings.Get(Name).ApiKey;
         if (string.IsNullOrWhiteSpace(apiKey))
             throw new InvalidOperationException("News API key is not configured");

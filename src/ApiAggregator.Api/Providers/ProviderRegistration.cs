@@ -3,7 +3,6 @@ namespace ApiAggregator.Api.Providers;
 
 public static class ProviderRegistration
 {
-    // One line per API in Program.cs: this is the "easy to add a new API" story.
     public static IServiceCollection AddApiProvider<TProvider>(
     this IServiceCollection services, string name, IConfiguration config)
     where TProvider : class, IApiProvider
@@ -17,7 +16,7 @@ public static class ProviderRegistration
             c.BaseAddress = new Uri(baseUrl);
             c.DefaultRequestHeaders.UserAgent.ParseAdd("ApiAggregator/1.0"); // GitHub + News API need it
         });
-        
+
         services.AddTransient<IApiProvider>(sp => sp.GetRequiredService<TProvider>());
         return services;
     }
