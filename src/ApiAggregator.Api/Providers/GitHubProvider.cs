@@ -10,7 +10,7 @@ public class GitHubProvider(HttpClient http) : IApiProvider
     public async Task<IReadOnlyList<AggregatedItem>> FetchAsync(
     ProviderRequest request, CancellationToken ct)
     {
-        var url = $"search/repositories?q={Uri.EscapeDataString(request.Keyword)}&sort=stars&per_page=20"; 
+        var url = $"search/repositories?q={Uri.EscapeDataString(request.Keyword)}&sort=stars&per_page=20";
         var response = await http.GetFromJsonAsync<GitHubSearchResponse>(url, ct);
         return response?.Items
         .Select(r => new AggregatedItem(
