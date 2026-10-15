@@ -3,9 +3,8 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace ApiAggregator.Api.Controllers;
 
-// TEMPORARY: for checking providers one at a time. Delete in Block F.
 [ApiController]
-[Route("api/[controller]")]                      // → /api/test
+[Route("api/[controller]")]                     
 public class TestController(IEnumerable<IApiProvider> providers) : ControllerBase
 {
     [HttpGet]

@@ -10,7 +10,8 @@ builder.Services.AddControllers();
 builder.Services.AddOpenApi();
 
 builder.Services.AddApiProvider<GitHubProvider>("GitHub", builder.Configuration);
-
+builder.Services.AddApiProvider<NewsApiProvider>("NewsApi", builder.Configuration);
+builder.Services.AddApiProvider<OpenWeatherMapProvider>("OpenWeatherMap", builder.Configuration);
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

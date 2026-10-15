@@ -17,7 +17,7 @@ public static class ProviderRegistration
             c.BaseAddress = new Uri(baseUrl);
             c.DefaultRequestHeaders.UserAgent.ParseAdd("ApiAggregator/1.0"); // GitHub + News API need it
         });
-        // Day 2: resilience + statistics handlers get attached to `client` here
+        
         services.AddTransient<IApiProvider>(sp => sp.GetRequiredService<TProvider>());
         return services;
     }
