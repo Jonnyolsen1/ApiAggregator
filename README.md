@@ -35,3 +35,4 @@ GitHub needs no key. Keys for the other providers are stored with user-secrets. 
 ```bash
 dotnet user-secrets set "Providers:NewsApi:ApiKey" "<your key>"
 dotnet user-secrets set "Providers:OpenWeatherMap:ApiKey" "<your key>"
+```
